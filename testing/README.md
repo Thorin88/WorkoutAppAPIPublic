@@ -1,0 +1,1 @@
+Can make scripts with parameters, such as the target host.

@@ -1,0 +1,24 @@
+services:
+  workout-api:
+    build: .
+    ports:
+      - 8080:8080
+    env_file:
+      - ./config/local.yaml
+    volumes:
+      - "$APPDATA/gcloud/application_default_credentials.json:/tmp/keys/credentials.json:ro"
+
+  core_db:
+    image: postgres:11.9
+    ports:
+      - 5434:5432
+    environment:
+      - POSTGRES_DB=core
+      - POSTGRES_USER=core
+      - POSTGRES_PASSWORD=core
+
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

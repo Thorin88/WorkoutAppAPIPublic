@@ -1,0 +1,21 @@
+python-dotenv
+
+SQLAlchemy==1.4.39
+psycopg2==2.9.4
+
+fastapi==0.111
+pydantic>=2.7.0,<3.0.0
+
+gunicorn==20.1.0
+
+# For generating JWT tokens
+pyjwt
+
+# For GCP
+google-cloud-secret-manager==2.12.6
+
+langchain
+langchain-google-vertexai
+
+numpy<2.0
+pandas<2.2.0

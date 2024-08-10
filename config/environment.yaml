@@ -1,0 +1,9 @@
+name: workout-api
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.19.13
+  - pip
+  - pip:
+    - -r requirements.txt

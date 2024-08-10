@@ -1,0 +1,25 @@
+DB_TYPE: local # or cloud_local
+ENV: dev
+
+DB_PORT: "5436"
+
+# Uses if DB_TYPE is local
+LOCAL_DB_PORT: "5434"
+LOCAL_DB_NAME: core
+LOCAL_DB_USER: core
+LOCAL_DB_PASSWORD: core
+
+# Can have a different secret per environment
+CLOUD_DB_CREDENTIALS_SECRET_NAME: practice-databases-workout-app-api-user-dev-credentials
+CLOUD_DB_NAME: workout-app-db-dev
+CLOUD_DB_INSTANCE_NAME: practice-databases
+
+PROJECT: practice-project-thorin
+LOCATION: europe-west2
+
+# PORT only needs to be explicitly defined like this for local runs of the app.
+# GCP will define this variable when the code is deployed to the cloud.
+PORT: 8080
+
+# Only local runs require this parameter
+GOOGLE_APPLICATION_CREDENTIALS: /tmp/keys/credentials.json

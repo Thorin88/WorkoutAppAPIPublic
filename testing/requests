@@ -1,0 +1,40 @@
+curl "http://localhost:8080/"
+
+curl "http://localhost:8080/create_tables"
+
+curl "http://localhost:8080/drop_tables"
+
+# From Docs
+curl -X 'POST' \
+  'http://localhost:8080/add_name' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "name": "Thorin"
+}'
+# One Line version
+curl -X 'POST' 'http://localhost:8080/add_name' -H 'accept: */*' -H 'Content-Type: application/json' -d '{"name": "Thorin"}'
+
+curl "http://localhost:8080/names"
+
+curl -X 'POST' 'http://localhost:8080/signup' -H 'accept: */*' -H 'Content-Type: application/json' -d '{"username":"Thorin","hash":"exampleHash","salt":"01010111"}'
+
+curl "http://localhost:8080/users/salt?username=Thorin"
+
+# Deployed version
+curl "https://workout-app-api-dev-rj7dqsxkwa-nw.a.run.app"
+
+curl "https://workout-app-api-dev-rj7dqsxkwa-nw.a.run.app/create_tables"
+
+curl "https://workout-app-api-dev-rj7dqsxkwa-nw.a.run.app/drop_tables"
+
+# Deployed version - main
+
+curl "https://workout-app-api-rj7dqsxkwa-nw.a.run.app"
+
+curl "https://workout-app-api-rj7dqsxkwa-nw.a.run.app/create_tables"
+
+curl "https://workout-app-api-rj7dqsxkwa-nw.a.run.app/drop_tables"
+
+# If using authorisation at GCP level, use
+# -H "Authorization: Bearer $(gcloud auth print-identity-token)"

@@ -1,0 +1,25 @@
+# Could even have steps for IAM stuff
+
+# Source starts from the root of the repo
+# The name here is important, it is a container that is pulled from
+steps:
+- name: gcr.io/google.com/cloudsdktool/cloud-sdk
+  args:
+  - gcloud
+  - run
+  - deploy
+  - $_GCP_DEPLOYMENT_NAME
+  - --source=.
+  - --env-vars-file=$_ENV_VARS_FILE
+  - --region=europe-west2
+  - --project=practice-project-thorin
+  - --cpu=1
+  - --concurrency=3
+  - --service-account=$_SERVICE_ACCOUNT_EMAIL
+  - --memory=512Mi
+  - --min-instances=0
+  - --max-instances=1
+  - --allow-unauthenticated
+  - --set-cloudsql-instances=practice-project-thorin:europe-west2:practice-databases
+
+# Variable for project here?
